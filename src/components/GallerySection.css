@@ -1,0 +1,196 @@
+/* ===== Gallery Section ===== */
+.gallery-section {
+  padding: 120px 0;
+  background-color: var(--bg-primary);
+  color: var(--text-white);
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.gallery-subtitle {
+  color: var(--text-gray);
+  font-size: 17px;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+/* ===== Comparison Grid ===== */
+.gallery-comparison-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;           /* 넓힌 섹션 간격 */
+}
+
+/* ===== Comparison Card ===== */
+.comparison-card {
+  background: var(--bg-card);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border-card);
+  transition: var(--transition-smooth);
+}
+
+.comparison-card:hover {
+  border-color: rgba(201, 149, 107, 0.2);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Side-by-side Images ===== */
+.comparison-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 480px;        /* 높이 증가 */
+  gap: 3px;             /* 중앙 구분선 */
+  background: rgba(201, 149, 107, 0.15); /* gap 색상 */
+}
+
+.comparison-side {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 이미지 */
+.comp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.comparison-side:hover .comp-img {
+  transform: scale(1.04);
+}
+
+/* 하단 드라마틱 그림자 (요청 사항) */
+.comparison-side::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.5)  35%,
+    transparent         100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* 라벨 */
+.comp-label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  z-index: 5;
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+
+/* TOUR SHOT — rose gold */
+.comparison-side:first-child .comp-label {
+  background: var(--gradient-rose-gold);
+  color: #0d0d0f;
+}
+
+/* DRAMA SCENE — semi-transparent dark */
+.comparison-side:last-child .comp-label {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Info Panel ===== */
+.comparison-info {
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  border-top: 1px solid var(--border-card);
+}
+
+/* ===== Star Rating ===== */
+.rating {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.star-icon {
+  font-size: 22px;
+  animation: starPulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px var(--accent-gold-glow));
+}
+
+.star-icon:nth-child(1) { animation-delay: 0s; }
+.star-icon:nth-child(2) { animation-delay: 0.1s; }
+.star-icon:nth-child(3) { animation-delay: 0.2s; }
+.star-icon:nth-child(4) { animation-delay: 0.3s; }
+.star-icon:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes starPulse {
+  0%, 100% { filter: drop-shadow(0 0 5px rgba(212, 168, 75, 0.6)); }
+  50%       { filter: drop-shadow(0 0 12px rgba(212, 168, 75, 1)); }
+}
+
+.drama-name {
+  background: var(--gradient-rose-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.review-text {
+  color: var(--text-gray);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .gallery-comparison-grid {
+    gap: 60px;
+  }
+  .comparison-images {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .comparison-side {
+    height: 280px;
+  }
+  .comparison-info {
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-section {
+    padding: 80px 0;
+  }
+  .gallery-header {
+    margin-bottom: 56px;
+  }
+  .comparison-side {
+    height: 240px;
+  }
+}

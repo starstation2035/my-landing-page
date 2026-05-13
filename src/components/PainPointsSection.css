@@ -1,0 +1,147 @@
+/* ===== Pain Points Section — Card News 3-Column Dark Luxury ===== */
+.pain-points-section {
+  width: 100%;
+  padding: 110px 0;
+  background-color: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background texture */
+.pain-points-section::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 149, 107, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.pain-points-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== Grid: 3-column card news ===== */
+.pain-points-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+/* ===== Individual Card ===== */
+.pain-point-card {
+  background: var(--bg-card);
+  border-radius: 18px;
+  padding: 40px 28px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  border: 1px solid var(--border-card);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  cursor: default;
+}
+
+/* Rose-gold top accent bar */
+.pain-point-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-rose-gold);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+/* Glow on hover */
+.pain-point-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: radial-gradient(
+    circle at top left,
+    rgba(201, 149, 107, 0.07) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.pain-point-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201, 149, 107, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 149, 107, 0.15);
+}
+
+.pain-point-card:hover::before,
+.pain-point-card:hover::after {
+  opacity: 1;
+}
+
+/* Card number badge */
+.pain-point-number {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--rose-gold);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+/* Icon */
+.pain-point-icon {
+  font-size: 42px;
+  margin-bottom: 20px;
+  line-height: 1;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+/* Text */
+.pain-point-text {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.65;
+  color: var(--text-white);
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .pain-points-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pain-points-section {
+    padding: 80px 0;
+  }
+  .pain-points-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .pain-point-card {
+    padding: 32px 24px 28px;
+  }
+  .pain-point-text {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,520 @@
+/* ============================================================
+   Hero Section — Luxury Busan K-Drama  #000 × #B76E79
+   ============================================================ */
+
+/* ── Root colour overrides for this section ── */
+:root {
+  --rg: #B76E79;          /* Rose Gold exact */
+  --rg-light: #D4939E;
+  --rg-dark:  #8E5260;
+  --rg-pale:  rgba(183, 110, 121, 0.15);
+  --rg-glow:  rgba(183, 110, 121, 0.55);
+  --grad-rg:  linear-gradient(135deg, #B76E79 0%, #D4939E 55%, #9E5F6A 100%);
+  --grad-rg-btn: linear-gradient(120deg, #C47E89 0%, #B76E79 45%, #D4939E 100%);
+}
+
+/* ── Section wrapper ── */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Background Slides ── */
+.hero-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 30%;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  will-change: opacity;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+/* Cinematic overlay — bottom heavy for text legibility */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right,  rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.3) 55%, rgba(0,0,0,0.1) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 35%, rgba(0,0,0,0.55) 75%, rgba(0,0,0,0.9) 100%);
+}
+
+/* ── Body (all content above background) ── */
+.hero-body {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0 60px;
+  justify-content: center;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* ── Location tag ── */
+.hero-tag-row {
+  margin-bottom: 32px;
+}
+
+.hero-location-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  background: rgba(183, 110, 121, 0.15);
+  border: 1px solid rgba(183, 110, 121, 0.35);
+  padding: 7px 16px;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.tag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--rg);
+  animation: dotPulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 1;   box-shadow: 0 0 0 0 var(--rg-glow); }
+  50%       { opacity: 0.7; box-shadow: 0 0 0 6px transparent; }
+}
+
+/* ── Layout: Left copy | Right cards ── */
+.hero-layout {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+/* ── Fade animation ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* ── Text Column ── */
+.hero-text-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Eyebrow */
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--rg-light);
+  margin-bottom: 22px;
+  animation: fadeInUp 0.6s 0.1s ease both;
+}
+
+.eyebrow-line {
+  display: block;
+  flex: 0 0 32px;
+  height: 1px;
+  background: var(--rg);
+  opacity: 0.7;
+}
+
+/* Headline */
+.hero-headline {
+  font-size: 62px;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.6);
+  animation: fadeInUp 0.7s 0.2s ease both;
+}
+
+/* Sub-headline */
+.hero-sub-headline {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 16px;
+  animation: fadeInUp 0.7s 0.32s ease both;
+}
+
+.hero-sub-headline em {
+  font-style: normal;
+  background: var(--grad-rg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* Body copy */
+.hero-body-copy {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 44px;
+  animation: fadeInUp 0.7s 0.44s ease both;
+}
+
+/* CTA row */
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  animation: fadeInUp 0.7s 0.56s ease both;
+  flex-wrap: wrap;
+}
+
+/* CTA Button */
+.hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 58px;
+  padding: 0 40px;
+  background: var(--grad-rg-btn);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 28px rgba(183, 110, 121, 0.5);
+}
+
+.btn-icon {
+  font-size: 13px;
+}
+
+.hero-cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.55s ease;
+}
+
+.hero-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(183, 110, 121, 0.65);
+}
+
+.hero-cta-btn:hover::before { left: 100%; }
+
+/* Trust badge */
+.hero-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.badge-star {
+  font-size: 14px;
+  letter-spacing: 1px;
+  filter: drop-shadow(0 0 6px rgba(212,168,75,0.8));
+}
+
+.badge-text {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.5px;
+}
+
+/* ── Poster Card Stack (Right Column) ── */
+.hero-cards-col {
+  flex: 0 0 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.poster-stack {
+  position: relative;
+  width: 380px;
+  height: 460px;
+}
+
+/* Individual cards */
+.poster-card {
+  position: absolute;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.7),
+    0 0 0 1px rgba(255,255,255,0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.poster-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.poster-card-label {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.9);
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(183,110,121,0.4);
+}
+
+/* Card 0 — back left */
+.poster-card--0 {
+  width: 220px;
+  height: 310px;
+  top: 0;
+  left: 0;
+  transform: rotate(-6deg) translateY(20px);
+  z-index: 1;
+}
+
+/* Card 1 — front center */
+.poster-card--1 {
+  width: 240px;
+  height: 340px;
+  top: 50px;
+  left: 80px;
+  transform: rotate(2deg);
+  z-index: 3;
+  box-shadow:
+    0 28px 72px rgba(0,0,0,0.8),
+    0 0 0 2px rgba(183,110,121,0.35);
+}
+
+/* Card 2 — back right */
+.poster-card--2 {
+  width: 200px;
+  height: 280px;
+  bottom: 0;
+  right: 0;
+  transform: rotate(8deg) translateY(-20px);
+  z-index: 2;
+}
+
+/* Hover lifts front card */
+.poster-stack:hover .poster-card--1 {
+  transform: rotate(0deg) translateY(-8px) scale(1.03);
+  box-shadow:
+    0 36px 80px rgba(0,0,0,0.85),
+    0 0 0 2px rgba(183,110,121,0.55);
+}
+
+/* Floating badge */
+.stack-badge {
+  position: absolute;
+  top: -16px;
+  right: 20px;
+  z-index: 10;
+  background: var(--grad-rg);
+  border-radius: 999px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 24px rgba(183,110,121,0.6);
+  animation: floatBadge 3s ease-in-out infinite;
+}
+
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+.stack-badge-num {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.stack-badge-text {
+  font-size: 12px;
+  color: rgba(255,255,255,0.88);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ── Slider Dots ── */
+.slider-dots {
+  position: absolute;
+  bottom: 44px;
+  left: 60px;
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+  align-items: center;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.12);
+  cursor: pointer;
+  transition: all 0.35s ease;
+  padding: 0;
+}
+
+.dot.active {
+  background: var(--grad-rg);
+  width: 28px;
+  border-radius: 4px;
+  border-color: transparent;
+  box-shadow: 0 0 12px var(--rg-glow);
+}
+
+/* ── Scroll Hint ── */
+.scroll-hint {
+  position: absolute;
+  bottom: 44px;
+  right: 60px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.45;
+}
+
+.scroll-hint-text {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.scroll-hint-line {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: rgba(255,255,255,0.5);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1100px) {
+  .hero-body {
+    padding: 80px 40px;
+  }
+  .hero-headline {
+    font-size: 52px;
+  }
+  .hero-cards-col {
+    flex: 0 0 340px;
+  }
+  .poster-stack {
+    width: 320px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 860px) {
+  .hero-cards-col {
+    display: none;
+  }
+  .hero-headline {
+    font-size: 46px;
+  }
+  .hero-body {
+    padding: 80px 32px 100px;
+  }
+  .slider-dots {
+    left: 32px;
+  }
+  .scroll-hint {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    min-height: 100svh;
+  }
+  .hero-body {
+    padding: 72px 24px 100px;
+  }
+  .hero-headline {
+    font-size: 36px;
+    letter-spacing: -0.5px;
+  }
+  .hero-sub-headline {
+    font-size: 18px;
+  }
+  .hero-body-copy {
+    font-size: 14px;
+  }
+  .hero-cta-btn {
+    height: 54px;
+    font-size: 15px;
+    padding: 0 28px;
+  }
+  .hero-cta-row {
+    gap: 16px;
+  }
+  .slider-dots {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 36px;
+  }
+}
