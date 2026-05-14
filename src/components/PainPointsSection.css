@@ -1,22 +1,22 @@
-/* ===== Pain Points Section — Card News 3-Column Dark Luxury ===== */
+/* ===== Pain Points Section — Rose Gold Glassmorphism Circular Cards ===== */
 .pain-points-section {
   width: 100%;
-  padding: 110px 0;
+  padding: 140px 0;
   background-color: var(--bg-secondary);
   position: relative;
   overflow: hidden;
 }
 
-/* Subtle background texture */
+/* Subtle background texture - warm glow */
 .pain-points-section::before {
   content: '';
   position: absolute;
-  top: -200px;
-  right: -200px;
-  width: 600px;
-  height: 600px;
+  top: -100px;
+  right: -100px;
+  width: 800px;
+  height: 800px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(201, 149, 107, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(183, 110, 121, 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -30,103 +30,177 @@
   align-items: center;
 }
 
-/* ===== Grid: 3-column card news ===== */
+/* ===== Typography Reborn ===== */
+.section-title {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #1A1A1A;
+  text-align: center;
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
+  white-space: pre-line; /* Essential for \n rendering */
+  text-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.section-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #4A4A4A; /* Highly readable dark grey */
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 32px;
+  white-space: pre-line;
+  letter-spacing: -0.5px;
+}
+
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #d4afb9, #b76e79);
+  border-radius: 2px;
+  margin-bottom: 60px;
+  box-shadow: 0 2px 10px rgba(183, 110, 121, 0.2);
+}
+
+/* ===== Grid: Circular Layout ===== */
 .pain-points-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 40px;
   width: 100%;
+  margin-top: 30px;
 }
 
-/* ===== Individual Card ===== */
+/* ===== Individual Glassmorphism Blob Card (Pain Point - Muted/Unsatisfied) ===== */
 .pain-point-card {
-  background: var(--bg-card);
-  border-radius: 18px;
-  padding: 40px 28px 36px;
+  /* Muted Blue-Grey Base - Represents dissatisfaction/concern */
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.4) 0%, 
+    rgba(148, 163, 184, 0.15) 50%,
+    rgba(100, 116, 139, 0.2) 100%
+  );
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  
+  aspect-ratio: 1 / 1;
+  /* Organic Blob Shape */
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  border: 1px solid var(--border-card);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  /* Cold Silver Border */
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  
   position: relative;
   overflow: hidden;
-  transition: var(--transition-smooth);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  
+  /* Floating & Morphing Animation */
+  animation: morph 8s ease-in-out infinite both alternate;
+  
+  /* Muted Shadows */
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.04),
+    inset 0 0 20px rgba(255, 255, 255, 0.3),
+    inset 0 -5px 15px rgba(100, 116, 139, 0.05);
   cursor: default;
 }
 
-/* Rose-gold top accent bar */
-.pain-point-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradient-rose-gold);
-  opacity: 0;
-  transition: opacity 0.35s ease;
+/* Morphing Keyframes */
+@keyframes morph {
+  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
 }
 
-/* Glow on hover */
+/* Muted Silver Shine */
 .pain-point-card::after {
   content: '';
   position: absolute;
-  inset: 0;
-  border-radius: 18px;
-  background: radial-gradient(
-    circle at top left,
-    rgba(201, 149, 107, 0.07) 0%,
-    transparent 60%
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 45%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.2) 55%,
+    transparent 100%
   );
-  opacity: 0;
-  transition: opacity 0.35s ease;
+  transform: rotate(-45deg);
+  transition: all 0.8s ease;
+  pointer-events: none;
+  opacity: 0.15;
 }
 
+/* Hover - More Intense Gloom when noticed */
 .pain-point-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(201, 149, 107, 0.3);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 149, 107, 0.15);
+  transform: translateY(-15px) scale(1.05);
+  border-color: rgba(100, 116, 139, 0.5);
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.5) 0%, 
+    rgba(148, 163, 184, 0.2) 50%, 
+    rgba(71, 85, 105, 0.3) 100%
+  );
+  box-shadow: 
+    0 25px 50px rgba(100, 116, 139, 0.15),
+    inset 0 0 30px rgba(255, 255, 255, 0.4);
+  animation-duration: 3s;
 }
 
-.pain-point-card:hover::before,
 .pain-point-card:hover::after {
-  opacity: 1;
+  transform: rotate(-45deg) translate(15%, 15%);
+  opacity: 0.3;
 }
 
-/* Card number badge */
+/* Card number badge - hidden as requested earlier, keeping selector just in case */
 .pain-point-number {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: var(--rose-gold);
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  opacity: 0.8;
+  display: none;
 }
 
-/* Icon */
+/* Icon with Glow - Enhanced Size */
 .pain-point-icon {
-  font-size: 42px;
+  font-size: 52px;
   margin-bottom: 20px;
   line-height: 1;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 10px 20px rgba(183, 110, 121, 0.3));
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 2;
 }
 
-/* Text */
+.pain-point-card:hover .pain-point-icon {
+  transform: scale(1.2) rotate(8deg);
+}
+
+/* Text - Enlarged for Maximum Readability */
 .pain-point-text {
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.65;
-  color: var(--text-white);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.5;
+  color: #1A1A1A; /* Stronger contrast */
   margin: 0;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.6px;
+  max-width: 260px; /* Wider text area for larger font */
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+  word-break: keep-all; /* Prevent awkward word breaks */
+  z-index: 2;
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .pain-points-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 30px;
   }
 }
 
@@ -136,12 +210,16 @@
   }
   .pain-points-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 30px;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .pain-point-card {
-    padding: 32px 24px 28px;
+    padding: 35px;
   }
   .pain-point-text {
-    font-size: 16px;
+    font-size: 17px;
+    max-width: 200px;
   }
 }

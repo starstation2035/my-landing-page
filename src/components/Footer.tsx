@@ -10,17 +10,6 @@ const Footer: FC = () => {
           <p className="footer-description">드라마 속 명소를 전문가의 시선으로 담아드립니다.</p>
         </div>
         
-        <div className="footer-info">
-          <div className="contact-info">
-            <p>이메일: contact@busandramatour.com</p>
-            <p>전화: 051-XXXX-XXXX</p>
-          </div>
-          
-          <div className="social-links">
-            <a href="#" className="social-link">Instagram</a>
-            <a href="#" className="social-link">KakaoTalk</a>
-          </div>
-        </div>
       </div>
       
       <div className="footer-bottom">

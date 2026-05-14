@@ -3,7 +3,6 @@ import HeroSection from './components/HeroSection';
 import PainPointsSection from './components/PainPointsSection';
 import SolutionsSection from './components/SolutionsSection';
 import ProductInfoSection from './components/ProductInfoSection';
-import BookingConditionsSection from './components/BookingConditionsSection';
 import GallerySection from './components/GallerySection';
 import Footer from './components/Footer';
 import StickyCta from './components/StickyCta';
@@ -43,7 +42,6 @@ function App() {
         <PainPointsSection />
         <SolutionsSection />
         <ProductInfoSection />
-        <BookingConditionsSection />
         <GallerySection />
       </main>
       <Footer />

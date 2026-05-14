@@ -1,22 +1,22 @@
-/* ===== Solutions Section — Dark Luxury ===== */
+/* ===== Solutions Section — Rose Gold Glassmorphism Circular Cards ===== */
 .solutions-section {
   width: 100%;
-  padding: 110px 0;
+  padding: 140px 0;
   background-color: var(--bg-primary);
   position: relative;
   overflow: hidden;
 }
 
-/* Background glow */
+/* Background glow - soft warm light */
 .solutions-section::before {
   content: '';
   position: absolute;
-  bottom: -150px;
-  left: -150px;
-  width: 500px;
-  height: 500px;
+  bottom: -100px;
+  left: -100px;
+  width: 800px;
+  height: 800px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(201, 149, 107, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(183, 110, 121, 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -30,87 +30,184 @@
   align-items: center;
 }
 
-/* ===== Grid ===== */
+/* ===== Typography Reborn ===== */
+.section-title {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #1A1A1A;
+  text-align: center;
+  letter-spacing: -1.8px;
+  margin-bottom: 24px;
+  white-space: pre-line; /* Essential for \n rendering */
+  text-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.section-subtitle {
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #4A4A4A; /* Highly readable dark grey */
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 32px;
+  white-space: pre-line;
+  letter-spacing: -0.5px;
+}
+
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-rose-gold);
+  border-radius: 2px;
+  margin-bottom: 60px;
+  box-shadow: 0 2px 10px rgba(183, 110, 121, 0.2);
+}
+
+/* ===== Grid: Circular Layout ===== */
 .solutions-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 40px;
   width: 100%;
+  margin-top: 30px;
 }
 
-/* ===== Solution Card ===== */
+/* ===== Individual Glassmorphism Circular Card (Solution - Grand/Radiant) ===== */
 .solution-card {
-  background: var(--bg-card);
-  border-radius: 18px;
-  padding: 40px 28px 36px;
+  /* Radiant Rose Gold Glass Base */
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.9) 0%, 
+    rgba(255, 240, 243, 0.6) 40%,
+    rgba(183, 110, 121, 0.25) 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  border: 1px solid var(--border-card);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  /* Imperial Metal Border */
+  border: 2px solid rgba(183, 110, 121, 0.4);
+  
   position: relative;
   overflow: hidden;
-  transition: var(--transition-smooth);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  
+  /* Powerful Success Glow */
+  box-shadow: 
+    0 15px 45px rgba(183, 110, 121, 0.1),
+    inset 0 0 30px rgba(255, 255, 255, 0.8),
+    inset 0 -10px 25px rgba(183, 110, 121, 0.15);
+  cursor: default;
 }
 
-/* Rose-gold left accent */
-.solution-card::before {
+/* Shimmering Diamond Shine Animation */
+.solution-card::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 3px;
-  background: var(--gradient-rose-gold);
-  opacity: 0;
-  transition: opacity 0.35s ease;
+  top: -150%;
+  left: -150%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.6) 45%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.6) 55%,
+    rgba(255, 255, 255, 0) 60%,
+    transparent 100%
+  );
+  transform: rotate(-45deg);
+  animation: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
 }
 
+@keyframes shine {
+  0% { transform: translate(-30%, -30%) rotate(-45deg); }
+  100% { transform: translate(30%, 30%) rotate(-45deg); }
+}
+
+/* Grand Hover - Expanding Light */
 .solution-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(201, 149, 107, 0.3);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), var(--shadow-rose);
+  transform: translateY(-20px) scale(1.06);
+  border-color: rgba(183, 110, 121, 0.8);
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 1) 0%, 
+    rgba(255, 245, 247, 0.8) 40%, 
+    rgba(183, 110, 121, 0.4) 100%
+  );
+  box-shadow: 
+    0 30px 60px rgba(183, 110, 121, 0.35),
+    0 0 40px rgba(183, 110, 121, 0.2),
+    inset 0 0 40px rgba(255, 255, 255, 1);
 }
 
-.solution-card:hover::before {
-  opacity: 1;
-}
-
-/* Check badge */
+/* Check badge - Grand Appearance */
 .solution-check {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: var(--gradient-rose-gold);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
-  font-weight: 700;
-  color: #0d0d0f;
-  margin-bottom: 18px;
+  font-size: 14px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 16px;
   flex-shrink: 0;
+  box-shadow: 0 6px 20px rgba(183, 110, 121, 0.5);
+  z-index: 5;
+  transition: all 0.4s ease;
 }
 
+.solution-card:hover .solution-check {
+  transform: scale(1.2) rotate(360deg);
+  box-shadow: 0 8px 25px rgba(183, 110, 121, 0.6);
+}
+
+/* Icon - Enhanced for Circle */
 .solution-icon {
-  font-size: 40px;
-  margin-bottom: 18px;
+  font-size: 52px;
+  margin-bottom: 20px;
   line-height: 1;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 10px 20px rgba(183, 110, 121, 0.3));
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.solution-card:hover .solution-icon {
+  transform: scale(1.2) rotate(-5deg);
+}
+
+/* Text - Enlarged for Maximum Readability */
 .solution-text {
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.65;
-  color: var(--text-white);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.5;
+  color: #1A1A1A; /* Strong contrast */
   margin: 0;
+  letter-spacing: -0.6px;
+  max-width: 260px; /* Wider area for larger font */
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+  word-break: keep-all;
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .solutions-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
 }
 
@@ -120,12 +217,16 @@
   }
   .solutions-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 30px;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .solution-card {
-    padding: 32px 24px 28px;
+    padding: 35px;
   }
   .solution-text {
-    font-size: 16px;
+    font-size: 17px;
+    max-width: 200px;
   }
 }

@@ -4,9 +4,9 @@ import './PainPointsSection.css';
 const PainPointsSection: FC = () => {
   const t = (key: string) => {
     const translations: Record<string, string> = {
-      'painPoints.title': '이런 경험 있으신가요?',
-      'painPoints.subtitle': '부산 여행, 아쉬움만 남았던 이유',
-      'painPoints.problem1': '드라마 촬영지에 가도 평범한 관광지 사진만 나온다',
+      'painPoints.title': '인생샷 건지러 간 부산 여행,\n사진첩엔 \'아쉬움\'만 가득하진 않나요?',
+      'painPoints.subtitle': '남들 다 찍는 뻔한 관광객 사진 말고,\n당신이 꿈꾸던 드라마 속 주인공이 될 시간입니다.',
+      'painPoints.problem1': '드라마속 한국의 문화를 체험하고 싶어',
       'painPoints.problem2': '혼자 또는 친구들끼리만 가면 누가 우리를 찍어줄까?',
       'painPoints.problem3': '이곳저곳 다니느라 시간 낭비, 효율적 동선이 없다',
       'painPoints.problem4': '부산까지 왔는데 정통 로컬 음식을 못 먹었어',
@@ -35,7 +35,6 @@ const PainPointsSection: FC = () => {
         <div className="pain-points-grid">
           {painPoints.map((point) => (
             <div key={point.id} className="pain-point-card">
-              <div className="pain-point-number">PAIN POINT 0{point.id}</div>
               <div className="pain-point-icon">{point.icon}</div>
               <h3 className="pain-point-text">{t(point.textKey)}</h3>
             </div>

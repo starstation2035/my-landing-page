@@ -21,8 +21,9 @@ const slides: HeroSlide[] = [
   },
   {
     id: 3,
-    bgUrl: '/poster_tram.png',
+    bgUrl: '/hero_tram_v7_wide_sharp.png',
     tag: '해운대 · 트램웨이 감성',
+    position: 'center 50%',
   },
 ];
 
@@ -87,9 +88,11 @@ const HeroSection: FC<HeroSectionProps> = ({ onCtaClick }) => {
           <div
             key={slide.id}
             className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
-            style={{ backgroundImage: `url(${slide.bgUrl})` }}
+            style={{ 
+              backgroundImage: `url(${slide.bgUrl})`,
+              backgroundPosition: (slide as any).position || 'center 20%'
+            }}
           >
-            <div className="hero-overlay" />
           </div>
         ))}
       </div>

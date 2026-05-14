@@ -1,39 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
 
 :root {
-  /* === Dark Luxury Background === */
-  --bg-primary: #0d0d0f;
-  --bg-secondary: #161619;
-  --bg-card: #1e1e23;
-  --bg-card-hover: #252530;
+  /* === Champagne Luxury Background === */
+  --bg-primary: #FDFBF9;
+  --bg-secondary: #F7F3EE;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FBF8F4;
 
-  /* === Text === */
-  --text-white: #f5f0eb;
-  --text-gray: #a89f95;
-  --text-muted: #6b6560;
+  /* === Text (Dark Gray for Light Theme) === */
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A4A4A;
+  --text-muted: #8E8E8E;
+  --text-white: #FFFFFF; /* Real white for specific cases */
 
   /* === Rose Gold Accent System (#B76E79) === */
   --rose-gold: #B76E79;
   --rose-gold-light: #D4939E;
   --rose-gold-dark: #8E5260;
-  --rose-gold-pale: rgba(183, 110, 121, 0.15);
+  --rose-gold-pale: rgba(183, 110, 121, 0.08);
 
   /* Gradient tokens */
   --gradient-rose-gold: linear-gradient(135deg, #B76E79 0%, #D4939E 55%, #9E5F6A 100%);
   --gradient-rose-gold-btn: linear-gradient(120deg, #C47E89 0%, #B76E79 45%, #D4939E 100%);
   --gradient-hero-overlay: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.25) 0%,
-    rgba(0, 0, 0, 0.1) 35%,
-    rgba(0, 0, 0, 0.6) 70%,
-    rgba(0, 0, 0, 0.95) 100%
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.05) 35%,
+    rgba(0, 0, 0, 0.4) 70%,
+    rgba(0, 0, 0, 0.75) 100%
   );
 
   /* === Supporting Colors === */
   --accent-gold: #d4a84b;
-  --accent-gold-glow: rgba(212, 168, 75, 0.7);
-  --border-subtle: rgba(183, 110, 121, 0.2);
-  --border-card: rgba(255, 255, 255, 0.06);
+  --border-subtle: rgba(183, 110, 121, 0.12);
+  --border-card: rgba(183, 110, 121, 0.1);
 
   /* === Typography === */
   --font-main: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
@@ -42,13 +42,12 @@
   --line-height-heading: 1.25;
 
   /* === Spacing / UI === */
-  --border-radius: 16px;
-  --border-radius-sm: 8px;
+  --border-radius: 20px;
+  --border-radius-sm: 10px;
   --border-radius-pill: 999px;
-  --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  --shadow-soft: 0 12px 40px rgba(0, 0, 0, 0.6);
-  --shadow-rose: 0 8px 32px rgba(183, 110, 121, 0.4);
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  --shadow-soft: 0 15px 45px rgba(183, 110, 121, 0.12);
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.04);
 }
 
 * {
@@ -64,7 +63,7 @@ html {
 body {
   font-family: var(--font-main);
   background-color: var(--bg-primary);
-  color: var(--text-white);
+  color: var(--text-primary);
   line-height: var(--line-height-body);
   overflow-x: hidden;
   font-size: 17px;
@@ -89,7 +88,7 @@ section {
   margin-bottom: 16px;
   letter-spacing: -0.5px;
   line-height: var(--line-height-heading);
-  color: var(--text-white);
+  color: var(--text-primary);
 }
 
 .section-title span.accent {
@@ -101,7 +100,7 @@ section {
 
 .section-subtitle {
   text-align: center;
-  color: var(--text-gray);
+  color: var(--text-secondary);
   font-size: 17px;
   line-height: var(--line-height-body);
   margin-bottom: 64px;
