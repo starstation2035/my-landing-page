@@ -6,6 +6,7 @@ interface HeroSlide {
   id: number;
   bgUrl: string;
   tag: string;
+  position?: string;
 }
 
 const slides: HeroSlide[] = [
