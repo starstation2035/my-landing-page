@@ -28,6 +28,7 @@
   letter-spacing: 4px;
   color: var(--rose-gold);
   margin-bottom: 12px;
+  margin-right: -4px; /* Compensate for letter-spacing to ensure perfect centering */
 }
 
 /* Quick Summary Bar */
