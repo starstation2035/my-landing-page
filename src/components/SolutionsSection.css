@@ -78,12 +78,12 @@
   /* Radiant Rose Gold Glass Base */
   background: linear-gradient(
     135deg, 
-    rgba(255, 255, 255, 0.9) 0%, 
-    rgba(255, 240, 243, 0.6) 40%,
-    rgba(183, 110, 121, 0.25) 100%
+    rgba(255, 255, 255, 0.95) 0%, 
+    rgba(255, 220, 225, 0.85) 40%,
+    rgba(183, 110, 121, 0.45) 100%
   );
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   
   aspect-ratio: 1 / 1;
   border-radius: 50%;
@@ -94,8 +94,8 @@
   align-items: center;
   text-align: center;
   
-  /* Imperial Metal Border */
-  border: 2px solid rgba(183, 110, 121, 0.4);
+  /* Deeper Imperial Metal Border */
+  border: 3px solid rgba(183, 110, 121, 0.6);
   
   position: relative;
   overflow: hidden;
@@ -139,17 +139,16 @@
 
 /* Grand Hover - Expanding Light */
 .solution-card:hover {
-  transform: translateY(-20px) scale(1.06);
-  border-color: rgba(183, 110, 121, 0.8);
+  border-color: rgba(183, 110, 121, 1);
   background: linear-gradient(
     135deg, 
     rgba(255, 255, 255, 1) 0%, 
-    rgba(255, 245, 247, 0.8) 40%, 
-    rgba(183, 110, 121, 0.4) 100%
+    rgba(255, 235, 240, 0.9) 40%, 
+    rgba(183, 110, 121, 0.6) 100%
   );
   box-shadow: 
-    0 30px 60px rgba(183, 110, 121, 0.35),
-    0 0 40px rgba(183, 110, 121, 0.2),
+    0 30px 70px rgba(183, 110, 121, 0.45),
+    0 0 50px rgba(183, 110, 121, 0.25),
     inset 0 0 40px rgba(255, 255, 255, 1);
 }
 
