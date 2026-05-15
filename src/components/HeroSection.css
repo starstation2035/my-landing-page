@@ -36,23 +36,23 @@
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center 20%;
+  background-position: center;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-  will-change: opacity;
+  transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1), transform 2s ease-out;
+  transform: scale(1.1);
 }
 
 .hero-slide.active {
   opacity: 1;
 }
 
-/* Cinematic overlay — refined for champagne theme */
+/* Cinematic overlay — enhanced for maximum text readability */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right,  rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 50%, transparent 100%),
-    linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, transparent 40%, rgba(0,0,0,0.4) 75%, rgba(0,0,0,0.8) 100%);
+    linear-gradient(to right,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 50%, transparent 100%),
+    linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 40%, rgba(0,0,0,0.5) 75%, rgba(0,0,0,0.85) 100%);
 }
 
 /* ── Body (all content above background) ── */
@@ -144,12 +144,13 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--rose-gold-light);
+  color: #fff; /* 명도를 높이기 위해 흰색으로 변경 후 텍스트 섀도우 적용 */
   margin-bottom: 24px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .eyebrow-line {
@@ -182,11 +183,9 @@
 
 .hero-sub-headline em {
   font-style: normal;
-  background: var(--grad-rg);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #D4939E; /* 그라데이션 대신 선명한 로즈골드 컬러 사용 */
   font-weight: 800;
+  text-shadow: 0 2px 15px rgba(0,0,0,0.6);
 }
 
 /* Body copy */

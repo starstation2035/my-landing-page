@@ -12,18 +12,19 @@ const slides: HeroSlide[] = [
   {
     id: 1,
     bgUrl: '/hero_yacht.png',
-    tag: '해운대 LCT · 요트 위 샴페인',
+    tag: '해운대 광안리 요트 위 샴페인',
+    position: 'center 40%',
   },
   {
     id: 2,
-    bgUrl: '/hero_train.png',
-    tag: '청사포 · 바다 열차 감성',
+    bgUrl: '/hero_train_final.png',
+    tag: '청사포 다릿돌 전망대',
   },
   {
     id: 3,
-    bgUrl: '/hero_tram_v7_wide_sharp.png',
-    tag: '해운대 · 트램웨이 감성',
-    position: 'center 50%',
+    bgUrl: '/hero_tram_v6_red.jpg',
+    tag: '청사포 · 바다 열차 감성',
+    position: 'center 70%',
   },
 ];
 
@@ -32,17 +33,17 @@ const posterCards = [
   {
     id: 1,
     url: '/poster_card1.png',
-    label: '#광안대교 인생샷',
+    label: '#해운대 인생샷',
   },
   {
     id: 2,
-    url: '/poster_tram.png',
-    label: '#해운대 트램웨이',
+    url: '/hero_train_final.png',
+    label: '#청사포 다릿돌 전망대',
   },
   {
     id: 3,
-    url: 'https://images.unsplash.com/photo-1594223274512-ad4803739b7c?q=80&w=600&auto=format&fit=crop',
-    label: '#드라마 재현샷',
+    url: '/hero_tram_v6_red.jpg',
+    label: '#청사포의 추억',
   },
 ];
 

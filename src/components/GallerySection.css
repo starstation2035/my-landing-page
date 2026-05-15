@@ -11,10 +11,13 @@
 }
 
 .gallery-subtitle {
-  color: var(--text-secondary);
-  font-size: 17px;
-  margin-top: 12px;
-  line-height: 1.6;
+  font-family: 'Allison', cursive;
+  color: var(--rose-gold);
+  font-size: 56px;
+  margin-top: -32px; /* Adjusted for larger font size and Allison's vertical alignment */
+  letter-spacing: 0.02em;
+  opacity: 0.95;
+  font-weight: 400;
 }
 
 /* ===== Comparison Grid ===== */
@@ -67,49 +70,44 @@
   transform: scale(1.05);
 }
 
-/* 하단 소프트 오버레이 */
+/* 하단 소프트 오버레이 제거 (버튼 가독성을 위해 필요시 다시 조정 가능) */
 .comparison-side::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 45%;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 0, 0.2) 50%,
-    transparent 100%
-  );
-  z-index: 2;
-  pointer-events: none;
+  display: none;
 }
 
 /* 라벨 */
 .comp-label {
   position: absolute;
-  bottom: 24px;
-  left: 24px;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  bottom: 20px;
+  left: 20px;
+  padding: 8px 18px;
+  border-radius: 40px;
+  font-size: 0.75rem; /* 더 작고 정교하게 */
+  font-weight: 600;
   color: white;
-  z-index: 5;
-  padding: 8px 16px;
-  border-radius: 8px;
-  backdrop-filter: blur(8px);
+  text-transform: uppercase; /* 대문자로 고급스럽게 */
+  letter-spacing: 0.12em; /* 넓은 자간으로 모던함 강조 */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 2;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* TOUR SHOT — rose gold */
+/* TOUR SHOT — brighter, vibrant rose gold */
 .comparison-side:first-child .comp-label {
-  background: var(--gradient-rose-gold);
+  background: linear-gradient(135deg, #e4919e 0%, #c47e89 50%, #b76e79 100%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 15px rgba(228, 145, 158, 0.3);
 }
 
-/* DRAMA SCENE — glass dark */
+/* LIFE SHOT — luxury glossy black glass with better visibility */
 .comparison-side:last-child .comp-label {
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(30, 30, 30, 0.7) 50%, rgba(0, 0, 0, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 /* ===== Info Panel ===== */
