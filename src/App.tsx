@@ -27,7 +27,7 @@ function App() {
     setIsModalOpen(false);
     
     // Show Toast
-    setToastMessage('예약 신청이 접수되었습니다! 곧 연락드리겠습니다.');
+    setToastMessage('알림 신청이 완료되었습니다! 일정이 확정되면 가장 먼저 연락드리겠습니다.');
     
     // Auto-hide Toast after 3 seconds
     setTimeout(() => {

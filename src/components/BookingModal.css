@@ -57,6 +57,14 @@
   letter-spacing: -0.5px;
 }
 
+.modal-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  word-break: keep-all;
+}
+
 .close-button {
   background: none;
   border: none;

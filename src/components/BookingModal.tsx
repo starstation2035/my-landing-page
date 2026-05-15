@@ -50,9 +50,14 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, onSubmit }
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-container" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
-          <h2 className="modal-title">예약 정보 입력</h2>
+          <h2 className="modal-title">다음 코스 오픈 알림 신청</h2>
           <button className="close-button" onClick={onClose}>&times;</button>
         </div>
+
+        <p className="modal-description">
+          현재 준비된 모든 회차의 예약이 마감되었습니다. 보내주신 성원에 진심으로 감사드립니다.
+          아래 정보를 남겨주시면 다음 코스 일정이 확정되는 즉시 가장 먼저 안내해 드리겠습니다.
+        </p>
 
         <form className="booking-form" onSubmit={handleSubmit}>
           <div className="form-field">
@@ -96,7 +101,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, onSubmit }
           </div>
 
           <div className="form-actions">
-            <button type="submit" className="submit-button">예약하기</button>
+            <button type="submit" className="submit-button">알림 신청하기</button>
             <button type="button" className="cancel-button" onClick={onClose}>취소</button>
           </div>
         </form>
