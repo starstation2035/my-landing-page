@@ -152,14 +152,23 @@
 }
 
 .review-text {
-  color: #333;
-  font-style: normal; /* Removed italic for better readability */
-  font-size: 17px;
-  line-height: 1.85;
-  max-width: 800px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
   margin: 0;
-  white-space: pre-line; /* Render \n from data */
-  word-break: keep-all;
+  white-space: pre-line;
+}
+
+.comparison-cta {
+  margin-top: 28px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+  .comparison-cta {
+    justify-content: center;
+  }
 }
 
 /* ===== Responsive ===== */

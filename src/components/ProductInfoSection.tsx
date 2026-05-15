@@ -1,7 +1,11 @@
 import type { FC } from 'react';
 import './ProductInfoSection.css';
 
-const ProductInfoSection: FC = () => {
+interface ProductInfoProps {
+  onCtaClick: () => void;
+}
+
+const ProductInfoSection: FC<ProductInfoProps> = ({ onCtaClick }) => {
   const summaryInfos = [
     { id: 1, label: '투어 일정', value: '15:00 ~ 21:00 (약 6시간)', isPrice: false },
     { id: 2, label: '방문 장소', value: '해운대 / 청사포 / 광안리', isPrice: false },
@@ -80,6 +84,12 @@ const ProductInfoSection: FC = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="itinerary-cta">
+          <button type="button" className="btn-luxury" onClick={onCtaClick}>
+            지금 예약하기
+          </button>
         </div>
       </div>
     </section>

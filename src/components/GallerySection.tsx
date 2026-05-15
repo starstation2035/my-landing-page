@@ -9,7 +9,11 @@ interface GalleryItem {
   review: string;
 }
 
-const GallerySection: FC = () => {
+interface GalleryProps {
+  onCtaClick: () => void;
+}
+
+const GallerySection: FC<GalleryProps> = ({ onCtaClick }) => {
   const galleryItems: GalleryItem[] = [
     {
       id: 1,
@@ -69,6 +73,11 @@ const GallerySection: FC = () => {
                 <StarRating />
                 <h4 className="drama-name">{item.dramaTitle}</h4>
                 <p className="review-text">"{item.review}"</p>
+                <div className="comparison-cta">
+                  <button type="button" className="btn-luxury" onClick={onCtaClick}>
+                    지금 예약하기
+                  </button>
+                </div>
               </div>
             </div>
           ))}
