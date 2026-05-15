@@ -173,12 +173,6 @@
   font-weight: 700;
 }
 
-.itinerary-cta {
-  display: flex;
-  justify-content: center;
-  margin-top: 56px;
-}
-
 /* Mobile */
 @media (max-width: 768px) {
   .product-info-section {

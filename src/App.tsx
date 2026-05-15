@@ -41,8 +41,8 @@ function App() {
         <HeroSection onCtaClick={handleOpenModal} />
         <PainPointsSection />
         <SolutionsSection />
-        <ProductInfoSection onCtaClick={handleOpenModal} />
-        <GallerySection onCtaClick={handleOpenModal} />
+        <ProductInfoSection />
+        <GallerySection />
       </main>
       <Footer />
       <StickyCta onClick={handleOpenModal} />

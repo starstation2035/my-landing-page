@@ -159,18 +159,6 @@
   white-space: pre-line;
 }
 
-.comparison-cta {
-  margin-top: 28px;
-  display: flex;
-  justify-content: flex-start;
-}
-
-@media (max-width: 768px) {
-  .comparison-cta {
-    justify-content: center;
-  }
-}
-
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .gallery-comparison-grid {
