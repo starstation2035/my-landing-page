@@ -143,7 +143,7 @@ const HeroSection: FC<HeroSectionProps> = ({ onCtaClick }) => {
               </button>
               <div className="hero-badge">
                 <div className="badge-star">⭐⭐⭐⭐⭐</div>
-                <span className="badge-text">대만 여행객 97% 만족</span>
+                <span className="badge-text">함께한 고객들의 97%가 추천함</span>
               </div>
             </div>
           </div>
