@@ -115,6 +115,36 @@ section {
   margin: 16px auto 56px;
 }
 
+/* ===== Premium Luxury Button ===== */
+.btn-luxury {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 36px;
+  background: var(--gradient-rose-gold-btn);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-pill);
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: 0 10px 25px rgba(183, 110, 121, 0.25);
+  text-decoration: none;
+}
+
+.btn-luxury:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(183, 110, 121, 0.4);
+}
+
+.btn-luxury::before {
+  content: '✦';
+  font-size: 18px;
+  margin-top: -2px;
+}
+
 /* ===== Toast ===== */
 .toast {
   position: fixed;
